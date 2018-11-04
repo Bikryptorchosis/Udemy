@@ -1,31 +1,14 @@
-from player import Player
+from enemy import Troll, Enemy
 
-pita = Player("Pita")
+ugly_troll = Troll("Purg")
+print("Ugly troll - {}".format(ugly_troll))
 
-print(pita.name)
-print(pita.lives)
+another_troll = Troll("Ug")
+print("Another Troll - {}".format(another_troll))
 
-pita.lives -= 1
-print(pita)
-pita.lives -= 1
-print(pita)
-pita.lives -= 1
-print(pita)
-pita.lives -= 1
-print(pita)
-pita.lives -= 1
-print(pita)
+brother_troll = Troll("Urg")
+print(brother_troll)
 
-pita.lives += 1
-print(pita)
-pita.level += 1
-print(pita)
-pita.level = 10
-print(pita)
-pita.level = 5
-print(pita)
-pita.level = 0
-print(pita)
-
-pita.score = 500
-print(pita)
+ugly_troll.grunt()
+another_troll.grunt()
+brother_troll.grunt()

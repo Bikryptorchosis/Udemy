@@ -1,4 +1,4 @@
-from enemy import Troll, Enemy, Vampire
+from enemy import Troll, Enemy, Vampire, VampireKing
 
 ugly_troll = Troll("Purg")
 print("Ugly troll - {}".format(ugly_troll))
@@ -22,6 +22,13 @@ print(dracula)
 dracula.take_damage(10)
 print(dracula)
 
-while dracula.alive:
-    dracula.take_damage(1)
-    print(dracula)
+# while dracula._alive:
+#     dracula.take_damage(1)
+#     print(dracula)
+
+nosf = VampireKing("Nosferatu")
+print(nosf)
+
+while nosf._alive:
+    nosf.take_damage(12)
+    print(nosf)

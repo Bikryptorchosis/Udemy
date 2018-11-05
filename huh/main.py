@@ -1,4 +1,4 @@
-from enemy import Troll, Enemy, Vampire, VampireKing
+from huh.enemy import Troll, Vampire, VampireKing
 
 ugly_troll = Troll("Purg")
 print("Ugly troll - {}".format(ugly_troll))

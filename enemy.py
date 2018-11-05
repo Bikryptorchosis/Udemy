@@ -61,7 +61,5 @@ class VampireKing(Vampire):
         self._hit_points = 140
 
     def take_damage(self, damage):
-        if not self.dodges():
             super().take_damage(damage // 4)
-        else:
-            pass
+

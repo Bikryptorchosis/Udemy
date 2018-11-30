@@ -78,6 +78,13 @@ def deal_player():
         result_text.set("Dealer wins you fuckooooo")
 
 
+def init_deal():
+    deal_player()
+    dealer_hand.append(deal_card(dealer_card_frame))
+    dealer_score_label.set(score_hand(dealer_hand))
+    deal_player()
+
+
 def new_game():
     global deck, player_hand, dealer_hand, dealer_card_frame, player_card_frame
 
@@ -97,11 +104,12 @@ def new_game():
     # create the list to store the dealer's and player's hands
     dealer_hand = []
     player_hand = []
+    init_deal()
 
-    deal_player()
-    dealer_hand.append(deal_card(dealer_card_frame))
-    dealer_score_label.set(score_hand(dealer_hand))
-    deal_player()
+
+def play():
+    new_game()
+    main_window.mainloop()
 
 
 main_window = tkinter.Tk()
@@ -152,4 +160,5 @@ load_images(cards)
 
 new_game()
 
-main_window.mainloop()
+if __name__ == '__main__':
+    play()

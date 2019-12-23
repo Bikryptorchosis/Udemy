@@ -43,7 +43,7 @@ for x in range(0, 5):
 for text, value in buttons.items():
     temp_button = tkinter.Button(keypad, text=text)
     temp_button.grid(row=int(value[0]), column=int(value[1]), sticky='wens', padx=1, pady=1)
-    if value == '51':
+    if value == '41':
         temp_button.grid(columnspan=2)
 
 main_window.update()

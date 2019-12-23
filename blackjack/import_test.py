@@ -1,4 +1,11 @@
-import blackjack
+# import blackjack
+#
+# print(__name__)
+# blackjack.play()
+# print(blackjack.cards)
 
-print(__name__)
-blackjack.play()
+from tqdm import tqdm
+from time import sleep
+
+for i in tqdm(range(100)):
+    sleep(0.1)

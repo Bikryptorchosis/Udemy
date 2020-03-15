@@ -24,7 +24,7 @@ def list_directories(s):
         print(s + ' does not exist')
 
 
-list_directories('C:\\Users\\piotr\\PycharmProjects\\Udemy')
+list_directories(r'C:\Users\piotr\PycharmProjects\Udemy')
 
 # listing = os.walk('C:\\Users\\piotr\\PycharmProjects\\Udemy')
 #

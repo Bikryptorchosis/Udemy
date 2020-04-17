@@ -10,6 +10,8 @@ def getint(prompt):
             print("Niepoprawna liczba, TRAJ EGEN")
         except EOFError:
             sys.exit(1)
+        finally:
+            print("To zawsze się wykona")
 
 
 num1 = getint("Podej pierwszo liczba: ")
@@ -22,3 +24,5 @@ except ZeroDivisionError:
     sys.exit(2)
 except (MemoryError, OverflowError):
     print("jakim kurwa cudem")
+else:
+    print("Dzielenie powiodło się")

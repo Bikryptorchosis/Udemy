@@ -42,6 +42,22 @@ class Penguin:
         print("Are ye 'avin a larf?")
 
 
+class Flock(object):
+
+    def __init__(self):
+        self.flock = []
+
+    def add_duck(self, duck: Duck) -> None:
+        self.flock.append(duck)
+
+    def migrate(self):
+        for duck in self.flock:
+            try:
+                duck.fly()
+            except AttributeError:
+                print("one duck down")
+                raise
+
 # def test_duck(duck):
 #     duck.walk()
 #     duck.swim()

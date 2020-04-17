@@ -32,6 +32,9 @@ class Duck:
 
 class Penguin:
 
+    def __init__(self):
+        self.fly = self.aviate
+
     def walk(self):
         print("Me waddle too, Kowalski")
 
@@ -41,6 +44,13 @@ class Penguin:
     def quack(self):
         print("Are ye 'avin a larf?")
 
+    def aviate(self):
+        print("I won the lottery and won a learjet")
+
+
+class Mallard(Duck):
+    pass
+
 
 class Flock(object):
 
@@ -48,15 +58,24 @@ class Flock(object):
         self.flock = []
 
     def add_duck(self, duck: Duck) -> None:
-        self.flock.append(duck)
+        fly_method = getattr(duck, 'fly', None)
+        # if isinstance(duck, Duck):    # to jest złe
+        if callable(fly_method):
+            self.flock.append(duck)
+        else:
+            raise TypeError("Cannot add duck, are you siur it's not a " + str(type(duck).__name__))
 
     def migrate(self):
+        problem = None
         for duck in self.flock:
             try:
                 duck.fly()
-            except AttributeError:
+            except AttributeError as e:
                 print("one duck down")
-                raise
+                #raise
+                problem = e
+        if problem:
+            raise problem
 
 # def test_duck(duck):
 #     duck.walk()
